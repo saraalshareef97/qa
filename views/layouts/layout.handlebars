@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ques & Answ</title>
+  <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header clearfix">
+      <nav>
+        <ul class="navbar navbar-light bg-light">
+          {{#if user }}
+          <li role="presentation"><a href="/">Dashboard</a></li>
+          <li role="presentation"><a href="/users/logout">Logout</a></li>
+          {{else}}
+          <li role="presentation"><a href="/users/login">Login</a></li>
+          <li role="presentation"><a href="/users/register">Register</a>
+          </li>
+          {{/if}}
+
+        </ul>
+      </nav>
+      <h3 class="text-muted">Question and Answer Home Page</h3>
+    </div>
+
+    <div class="row ">
+      <div class="col-lg-12">
+        {{#if success_msg}}
+        <div class="alert alert-success">{{success_msg}}</div>
+
+        {{/if}}
+
+        {{#if error_msg}}
+        <div class="alert alert-danger">{{error_msg}}</div>
+
+        {{/if}}
+
+        {{#if success_msg}}
+        <div class="alert alert-danger">{{error}}</div>
+
+        {{/if}}
+
+        {{{body}}}
+
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy; 2019 Q&A, Inc.</p>
+    </footer>
+  </div>
+  <!-- /container -->
+
+
+</body>
+
+</html>
